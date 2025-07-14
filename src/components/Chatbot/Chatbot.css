@@ -1,0 +1,44 @@
+/* Prevent full stretch of bot container */
+.react-chatbot-kit-chat-bot-message-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+/* Only bubble stretches, not avatar */
+.react-chatbot-kit-chat-bot-avatar {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+/* Bot Message */
+.react-chatbot-kit-chat-bot-message {
+  background-color: #e5e7eb;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* User Message */
+.react-chatbot-kit-user-chat-message {
+  background-color: #10b981;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  align-self: flex-end;
+}
+
+/* Scroll area fix */
+.react-chatbot-kit-chat-message-container {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
