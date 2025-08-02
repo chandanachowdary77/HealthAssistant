@@ -1,44 +1,97 @@
-/* Prevent full stretch of bot container */
+/* === Chat Container === */
+.react-chatbot-kit-chat-container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.react-chatbot-kit-chat-inner-container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+/* === Scrollable Message Area === */
+.react-chatbot-kit-chat-message-container {
+  width: 100%;
+  padding: 0.5rem 0 !important; /* reduce vertical space */
+  overflow-y: auto;
+  flex: 1;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+/* === Scrollbar Styling === */
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* === Bot Message Layout === */
 .react-chatbot-kit-chat-bot-message-container {
   display: flex;
   align-items: flex-start;
-  max-width: 100%;
+  padding: 0.2rem 0 !important;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 0.4rem; /* Tight gap between avatar and message */
 }
 
-/* Only bubble stretches, not avatar */
+/* Bot Avatar Styling */
 .react-chatbot-kit-chat-bot-avatar {
+  width: 36px;
+  height: 36px;
+  margin: 0 !important; /* No extra space */
   flex-shrink: 0;
-  margin-right: 0.5rem;
 }
 
-/* Bot Message */
+/* Bot Message Bubble */
 .react-chatbot-kit-chat-bot-message {
-  background-color: #e5e7eb;
+  background-color: #3b82f6;
   color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  margin: 0.5rem 0;
-  max-width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  font-size: 0.9rem;
+  max-width: 85%;
+  margin: 0 !important;
   white-space: pre-wrap;
   word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* User Message */
+/* === User Message === */
 .react-chatbot-kit-user-chat-message {
   background-color: #10b981;
   color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  margin: 0.5rem 0;
-  max-width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  margin: 0 !important;
+  margin-left: auto !important;
+  font-size: 0.9rem;
+  max-width: 85%;
   white-space: pre-wrap;
   word-wrap: break-word;
-  align-self: flex-end;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* Scroll area fix */
-.react-chatbot-kit-chat-message-container {
-  padding: 1rem;
-  overflow-y: auto;
-  flex: 1;
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .react-chatbot-kit-chat-bot-message,
+  .react-chatbot-kit-user-chat-message {
+    max-width: 95%;
+    font-size: 0.85rem;
+  }
+
+  .react-chatbot-kit-chat-message-container {
+    padding: 0.3rem 0 !important;
+  }
 }
